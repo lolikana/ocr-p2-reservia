@@ -1,7 +1,7 @@
 @import 'reset.css';
 @import 'base.css';
 
-.header {
+#header {
   width: 100%;
   position: relative;
   display: flex;
@@ -42,8 +42,25 @@
   border-bottom: 2px solid var(--primary);
 }
 
+#footer {
+  background-color: var(--grey);
+  padding: 2rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer--category > h1 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.footer--category p {
+  margin-bottom: 0.75rem;
+}
+
 @media only screen and (min-width: 700px) {
-  .header {
+  #header {
     padding: 1rem 2rem;
   }
   .navbar {
@@ -68,5 +85,22 @@
   .navbar--link[aria-current='true'] {
     color: var(--primary);
     border-bottom: none;
+  }
+
+  #footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+
+  .footer--category {
+    max-width: 170px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #footer {
+    justify-content: center;
+    gap: 5rem;
   }
 }
