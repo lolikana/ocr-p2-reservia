@@ -43,7 +43,7 @@
 }
 
 #main {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
 }
 
 .section--filters {
@@ -59,7 +59,7 @@
 .section--filters p {
   font-size: 0.8rem;
 }
-
+/** Filter Search **/
 .filter--search-container {
   position: relative;
   width: fit-content;
@@ -172,14 +172,50 @@
   content: '\f129';
   font: var(--fa-font-solid);
   color: var(--primary);
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   position: absolute;
   left: 0;
   width: 1rem;
-  line-height: 1rem;
   border: 2px solid var(--grey);
   border-radius: 50%;
+  line-height: 1rem;
   text-align: center;
+}
+
+/** Section Accommodations **/
+.section--accommodations h1,
+h2,
+.link--more {
+  font-weight: bold;
+}
+.section--accommodations-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.accommodations--cards {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.accommodations--card {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.accommodations--card img {
+  max-height: 240px;
+  object-fit: cover;
+}
+.accommodations--card-desc {
+  padding: 0.25rem 1rem 0.5rem;
+  line-height: 1.5rem;
+}
+.accommodations--card-rating {
+  color: var(--primary);
+  font-size: 0.8rem;
 }
 
 #footer {
