@@ -52,10 +52,6 @@
   gap: 1.5rem;
   line-height: 1.5rem;
 }
-.section--filters h1 {
-  font-size: 1.15rem;
-  font-weight: bold;
-}
 .section--filters p {
   font-size: 0.8rem;
 }
@@ -183,9 +179,7 @@
 }
 
 /** Section Accommodations **/
-.section--accommodations h1,
-h2,
-.link--more {
+.section--accommodations .link--more {
   font-weight: bold;
 }
 .section--accommodations-main {
@@ -197,7 +191,7 @@ h2,
   display: flex;
   flex-flow: row wrap;
   gap: 2rem;
-  justify-content: center;
+  /* justify-content: center; */
 }
 .accommodations--card {
   width: 100%;
@@ -206,7 +200,7 @@ h2,
   overflow: hidden;
 }
 .accommodations--card img {
-  max-height: 240px;
+  max-height: 150px;
   object-fit: cover;
 }
 .accommodations--card-desc {
@@ -232,6 +226,25 @@ h2,
 }
 .footer--category p {
   margin-bottom: 0.75rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .accommodations--cards {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .accommodations--card {
+    flex: 1 0 45%;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .accommodations--cards {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .accommodations--card {
+    flex: 1 0 25%;
+  }
 }
 
 @media only screen and (min-width: 700px) {
