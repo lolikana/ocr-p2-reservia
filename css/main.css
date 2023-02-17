@@ -279,6 +279,15 @@
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
+.section--accomodations-title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.section--accomodations-title i {
+	font-size: 1.3rem;
+}
 
 /** Section Activities **/
 .activities--card {
