@@ -164,11 +164,12 @@
   border-bottom-left-radius: 80px;
   border-top-right-radius: 80px;
   border-bottom-right-radius: 80px;
-  background-color: var(--primary-light);
+  background-color: var(--grey);
   transition: all 250ms ease-in;
 }
-.filter--select-label:hover .filter--select-background,
+
 .filter--select-label input:checked + .filter--select-background {
+  background-color: var(--primary-light);
   transition: all 250ms ease-out;
   width: calc(100% + 4px);
   border-radius: 80px;
@@ -176,6 +177,10 @@
 .filter--select-label:hover > i::before,
 .filter--select-label input:checked ~ i::before {
   color: var(--validation);
+}
+.filter--select-label:hover > .filter--select-background {
+  background-color: var(--primary-light);
+  transform: scale(1.05);
 }
 
 .section--filters-info {
