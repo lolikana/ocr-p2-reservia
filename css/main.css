@@ -298,13 +298,16 @@
   flex-direction: column;
   gap: 2rem;
 }
-
 .footer--category > h1 {
   font-weight: bold;
   margin-bottom: 1rem;
 }
-.footer--category p {
+.footer--category a {
+  display: block;
   margin-bottom: 0.75rem;
+}
+.footer--category a:hover {
+  text-decoration: underline;
 }
 
 @media only screen and (min-width: 600px) {
@@ -395,14 +398,7 @@
   }
 
   .footer--category {
-    max-width: 170px;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  #footer {
-    justify-content: center;
-    gap: 5rem;
+    width: 250px;
   }
 }
 
@@ -434,5 +430,10 @@
   .activities--cards {
     display: flex;
     flex-direction: row;
+  }
+  #footer {
+    justify-content: center;
+    gap: 5rem;
+    text-align: center;
   }
 }
