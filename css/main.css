@@ -71,11 +71,12 @@
   border-radius: 10px;
 }
 .filter--search-container .filter--search-input {
+	position: relative;
   font-weight: bold;
   margin: 0 2.5rem;
   padding: 0.4rem 0.5rem;
 }
-.filter--search-container .filter--search-btn::before,
+.filter--search-container .filter--search-icon::before,
 .filter--search-container .filter--search-btn::after {
   padding: 0 0.75rem;
   display: flex;
@@ -85,7 +86,7 @@
   bottom: 0;
   height: 100%;
 }
-.filter--search-container .filter--search-btn::before {
+.filter--search-container .filter--search-icon::before {
   content: '\f3c5';
   font: var(--fa-font-solid);
   outline: 1px solid var(--grey);
@@ -104,7 +105,7 @@
   border-radius: 10px;
   background-color: var(--primary);
 }
-.filter--search-container .filter--search-btn:hover {
+.filter--search-container > button:hover {
   opacity: 0.8;
 }
 
