@@ -280,13 +280,13 @@
   border-bottom-left-radius: 20px;
 }
 .section--accomodations-title {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .section--accomodations-title i {
-	font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 /** Section Activities **/
@@ -386,7 +386,7 @@
   .navbar--link > a::before {
     bottom: 2.9rem;
   }
-	
+
   .section--filters {
     gap: 1.5em;
   }
@@ -435,5 +435,8 @@
   .activities--cards {
     display: flex;
     flex-direction: row;
+  }
+  #section--activities {
+    padding-top: 2rem;
   }
 }
