@@ -3,6 +3,7 @@
   --primary-light: #deebff;
 
   --grey: #dddcdc;
+  --grey-light: #efefef;
 }
 html {
   height: 100%;
@@ -17,6 +18,7 @@ body {
 }
 main {
   height: 100%;
+  padding: 1rem 1.5rem;
 }
 section {
   margin-top: 2rem;
