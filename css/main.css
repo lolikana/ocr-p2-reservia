@@ -400,7 +400,7 @@
   }
 
   .footer--category {
-    width: 250px;
+   flex: 1;
   }
 }
 
@@ -432,10 +432,5 @@
   .activities--cards {
     display: flex;
     flex-direction: row;
-  }
-  #footer {
-    justify-content: center;
-    gap: 5rem;
-    text-align: center;
   }
 }
