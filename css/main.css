@@ -70,41 +70,42 @@
   border: 1px solid var(--grey);
   border-radius: 10px;
 }
-.filter--search-container .icon-location,
-.filter--search-container .icon-search {
-  height: 100%;
-  width: 2.4rem;
-  position: absolute;
-  font-size: 0.9rem;
-  padding-top: 0.75rem;
-}
-.filter--search-container .icon-location {
-  padding-left: 0.8rem;
-  outline: 1px solid var(--grey);
-  background-color: var(--grey);
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-.filter--search-container .icon-search {
-  top: 0;
-  color: #fff;
-  outline: 1px solid var(--primary);
-  background-color: var(--primary);
-  border-radius: 10px;
-}
-.filter--search-container .filter--search-btn {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 2.4rem;
-}
-.filter--search-container .filter--search-btn:hover {
-  opacity: 0.8;
-}
 .filter--search-container .filter--search-input {
   font-weight: bold;
   margin: 0 2.5rem;
   padding: 0.4rem 0.5rem;
+}
+.filter--search-container .filter--search-btn::before,
+.filter--search-container .filter--search-btn::after {
+  padding: 0 0.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+}
+.filter--search-container .filter--search-btn::before {
+  content: '\f3c5';
+  font: var(--fa-font-solid);
+  outline: 1px solid var(--grey);
+  background-color: var(--grey);
+  color: #000;
+  left: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: var(--grey);
+}
+.filter--search-container .filter--search-btn::after {
+  content: '\f002';
+  font: var(--fa-font-solid);
+  color: #fff;
+  right: 0;
+  border-radius: 10px;
+  background-color: var(--primary);
+}
+.filter--search-container .filter--search-btn:hover {
+  opacity: 0.8;
 }
 
 /** Filter Select **/
@@ -318,6 +319,14 @@
 }
 
 @media only screen and (min-width: 600px) {
+  .filter--search-container .filter--search-btn::after {
+    content: 'Search';
+    font: inherit;
+    font-weight: bold;
+  }
+  .filter--search-container .filter--search-input {
+    width: 250px;
+  }
   .template--cards {
     justify-content: space-between;
     gap: 1rem;
@@ -348,9 +357,9 @@
   .activities--cards-grid.grid-type1 {
     grid-template-rows: 250px 200px;
   }
-	.activities--cards-grid.grid-type2 {
-		grid-template-rows: repeat(2, 225px);
-	}
+  .activities--cards-grid.grid-type2 {
+    grid-template-rows: repeat(2, 225px);
+  }
   .activities--card:nth-child(1) {
     grid-area: 1 / 1 / 3 / 2;
   }
@@ -363,6 +372,9 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .section:first-child {
+    margin-top: 0;
+  }
   .template--cards {
     justify-content: space-between;
     gap: 2rem;
