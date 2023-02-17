@@ -333,7 +333,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 300px);
-    gap: 1rem;
+    gap: 2rem;
   }
   .activities--card:nth-child(1) {
     grid-area: 1 / 1 / 3 / 2;
@@ -349,7 +349,7 @@
 @media only screen and (min-width: 768px) {
   .template--cards {
     justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
   }
   .template--card {
     flex: 1 0 25%;
