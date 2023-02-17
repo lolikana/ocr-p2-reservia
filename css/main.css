@@ -191,17 +191,25 @@
   display: flex;
   flex-flow: row wrap;
   gap: 2rem;
-  /* justify-content: center; */
 }
 .accommodations--card {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.25rem;
+  transition: transform 250ms ease;
+}
+.accommodations--card:hover,
+.accommodations--card:focus-within {
+  transform: scale(1.025);
+  transition: transform 250ms ease;
 }
 .accommodations--card img {
+  width: 100%;
   max-height: 150px;
   object-fit: cover;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 .accommodations--card-desc {
   padding: 0.25rem 1rem 0.5rem;
@@ -236,7 +244,11 @@
   .accommodations--card {
     flex: 1 0 45%;
   }
+  .accommodations--card img {
+    height: 150px;
+  }
 }
+
 @media only screen and (min-width: 800px) {
   .accommodations--cards {
     justify-content: space-between;
@@ -247,7 +259,7 @@
   }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 768px) {
   #header {
     padding: 1rem 2rem;
   }
