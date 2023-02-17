@@ -33,13 +33,28 @@
 .navbar--link {
   width: 100%;
   flex: 1;
-  position: relative;
-  padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--grey);
 }
+.navbar--link::after {
+  display: block;
+  content: '';
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.navbar--link a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.navbar--link:hover,
 .navbar--link[aria-current='true'] {
   color: var(--primary);
+}
+.navbar--link:hover::after,
+.navbar--link[aria-current='true']::after {
   border-bottom: 2px solid var(--primary);
+  transition: transform 250ms ease-in-out;
+  transform: scaleX(1);
 }
 
 .section--filters {
