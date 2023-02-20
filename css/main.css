@@ -53,7 +53,7 @@
   transition: transform 250ms ease-in-out;
   transform: scaleX(1);
 }
-
+/** Section Filter **/
 .section--filters {
   display: flex;
   flex-direction: column;
@@ -63,7 +63,7 @@
 .section--filters p {
   font-size: 0.8rem;
 }
-/** Filter Search **/
+/*** Filter Search ***/
 .filter--search-container {
   position: relative;
   width: fit-content;
@@ -78,23 +78,21 @@
 }
 .filter--search-container .filter--search-icon::before,
 .filter--search-container .filter--search-btn::after {
-  padding: 0 0.75rem;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   position: absolute;
   bottom: 0;
-  height: 100%;
+  padding: 0 0.75rem;
 }
 .filter--search-container .filter--search-icon::before {
   content: '\f3c5';
   font: var(--fa-font-solid);
-  outline: 1px solid var(--grey);
-  background-color: var(--grey);
   color: #000;
-  left: 0;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  outline: 1px solid var(--grey);
   background-color: var(--grey);
 }
 .filter--search-container .filter--search-btn::after {
@@ -125,8 +123,10 @@
   flex-flow: row wrap;
   gap: 1rem;
 }
+.filter--select-label input {
+  display: none;
+}
 .filter--select-container .filter--select-label {
-  z-index: 2;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -136,8 +136,11 @@
   border: 2px solid var(--grey);
   border-radius: 80px;
 }
-.filter--select-container .filter--select-label .icon-filter {
+.filter--select-container .filter--select-label .icon-filter,
+.filter--select-text {
   z-index: 2;
+}
+.filter--select-container .filter--select-label .icon-filter {
   position: absolute;
   left: 0.5rem;
   top: 25%;
@@ -147,11 +150,8 @@
 .filter--select-label {
   cursor: pointer;
 }
-.filter--select-label input {
-  display: none;
-}
+
 .filter--select-text {
-  z-index: 2;
   font-weight: bold;
 }
 .filter--select-background {
@@ -163,7 +163,6 @@
   background-color: var(--grey);
   transition: all 250ms ease-in;
 }
-
 .filter--select-label input:checked + .filter--select-background {
   background-color: var(--primary-light);
   transition: all 250ms ease-out;
@@ -178,7 +177,7 @@
   background-color: var(--primary-light);
   transform: scale(1.05);
 }
-
+/*** Filter info ***/
 .section--filters-info {
   display: flex;
   flex-direction: row;
@@ -186,7 +185,6 @@
   position: relative;
   padding-left: 1.75rem;
 }
-
 .section--filters-info::before {
   content: '\f129';
   font: var(--fa-font-solid);
@@ -218,17 +216,16 @@
   transform: scale(1.025);
   transition: transform 250ms ease;
 }
-.template--card img {
-  width: 100%;
-  max-height: 150px;
-  object-fit: cover;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-}
 .template--card > a {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+.template--card img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
 }
 .template--card-desc {
   display: flex;
@@ -241,7 +238,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
 }
@@ -277,9 +274,7 @@
 .accommodations--card.popular-card img {
   max-width: 40%;
   min-height: 150px;
-  border-top-right-radius: 0;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-radius: 20px 0 0 20px;
 }
 .section--accomodations-title {
   display: flex;
@@ -301,11 +296,11 @@
 }
 
 #footer {
-  background-color: var(--grey);
-  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  background-color: var(--grey);
+  padding: 2rem 1rem;
 }
 .footer--category > h1 {
   font-weight: bold;
@@ -328,6 +323,7 @@
   .filter--search-container .filter--search-input {
     width: 250px;
   }
+  /** Section Accommodation & Activities **/
   .template--cards {
     justify-content: space-between;
     gap: 1rem;
@@ -338,6 +334,7 @@
   .template--card.main-card img {
     height: 150px;
   }
+  /** Section Activities **/
   .activities--card > a {
     justify-content: space-between;
   }
@@ -374,16 +371,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .section:first-child {
-    margin-top: 0;
-  }
-  .template--cards {
-    justify-content: space-between;
-    gap: 2rem;
-  }
-  .template--card {
-    flex: 1 0 25%;
-  }
   #header {
     padding: 1rem 2rem;
   }
@@ -418,6 +405,16 @@
     align-items: center;
     gap: 2rem;
   }
+  .section:first-child {
+    margin-top: 0;
+  }
+  .template--cards {
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .template--card {
+    flex: 1 0 25%;
+  }
 
   #footer {
     flex-direction: row;
@@ -430,6 +427,15 @@
 }
 
 @media only screen and (min-width: 1200px) {
+  .popular-accommodations .template--cards {
+    flex-direction: column;
+  }
+  .template--card.main-card {
+    flex: 1 0 25%;
+  }
+  .template--card.main-card img {
+    max-height: 100px;
+  }
   .section--accommodations {
     display: flex;
     gap: 1.5rem;
@@ -445,14 +451,8 @@
   .section--accommodations-container.popular-accommodations {
     order: 2;
   }
-  .popular-accommodations .template--cards {
-    flex-direction: column;
-  }
-  .template--card.main-card {
-    flex: 1 0 25%;
-  }
-  .template--card.main-card img {
-    max-height: 100px;
+  #section--activities {
+    padding-top: 2rem;
   }
   .activities--cards {
     display: flex;
@@ -460,8 +460,5 @@
   }
   .activities--cards-grid.grid-type2 {
     direction: ltr;
-  }
-  #section--activities {
-    padding-top: 2rem;
   }
 }
