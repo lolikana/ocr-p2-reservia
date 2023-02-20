@@ -36,16 +36,14 @@
           <p>Right in the town centre or surrounded by nature</p>
         </div>
         <div class="filter--search-container">
-          <i class="fontawesomeicon fa-solid fa-location-dot icon-location"></i>
+					<span class="filter--search-icon"></span>
           <input
             type="text"
             id="filter--search-input"
             placeholder="Marseille, France"
             class="filter--search-input"
           />
-          <button class="filter--search-btn">
-            <i class="fa-solid fa-magnifying-glass icon-search"></i>
-          </button>
+          <button class="filter--search-btn"></button>
         </div>
         <div class="filters--select">
           <h1>Filters</h1>
@@ -83,7 +81,10 @@
 
       <section id="section--accommodations" class="section section--accommodations">
         <div class="section--accommodations-container popular-accommodations">
-          <h1>Most populars</h1>
+          <div class="section--accomodations-title">
+            <h1>Most populars</h1>
+            <i class="fa-solid fa-arrow-trend-up"></i>
+          </div>
           <div class="template--cards accommodations--cards">
             <article class="template--card accommodations--card popular-card">
               <a class="template--card-link" href="#">
@@ -331,7 +332,7 @@
       <section id="section--activities" class="section section--activities">
         <h1>Activities in Marseille</h1>
         <div class="template--cards activities--cards">
-          <div class="activities--cards-grid">
+          <div class="activities--cards-grid grid-type1">
             <article class="template--card activities--card">
               <a class="template--card-link" href="#">
                 <img
@@ -381,7 +382,7 @@
               </a>
             </article>
           </div>
-          <div class="activities--cards-grid">
+          <div class="activities--cards-grid grid-type2">
             <article class="template--card activities--card">
               <a class="template--card-link" href="#">
                 <img
